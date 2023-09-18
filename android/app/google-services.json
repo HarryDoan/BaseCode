@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "17766986564",
+    "project_id": "e-member-b1efd",
+    "storage_bucket": "e-member-b1efd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17766986564:android:a337580eb42cd9bd619d11",
+        "android_client_info": {
+          "package_name": "com.ims.emember"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17766986564-avcn03r400sd1e4fre32tcf4g9mlo72v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrJyFGy7of4qRLZ1IiIE4ffU-rrXgx93I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17766986564-avcn03r400sd1e4fre32tcf4g9mlo72v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "17766986564-bblq4916q4borqavb50n07dm5i07h0bo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ims.emember-ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

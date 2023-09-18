@@ -1,0 +1,11 @@
+rootProject.name = 'eMember'
+include ':@react-native-camera-roll_camera-roll'
+project(':@react-native-camera-roll_camera-roll').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-camera-roll/camera-roll/android')
+
+include ':react-native-permissions'
+project(':react-native-permissions').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-permissions/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':react-native-splash-screen'   
+project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+include ':app', ':react-native-code-push'
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
