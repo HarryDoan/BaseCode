@@ -1,42 +1,73 @@
+import {Block, Image, Pressable} from '@components';
+import {IMAGES, icons} from '@assets';
 import {ScrollView, Text, View} from 'react-native';
+import {fakeDataTitle, fakeDataTitle1} from '@utils/dataFake';
 
 import {COLORS} from '@theme';
-import {Pressable} from '@components';
 import React from 'react';
-import {fakeDataTitle} from '@utils/dataFake';
+import {width} from '@utils/responsive';
 
 const HorizontalScrollItem = () => {
   return (
     <View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} l>
-        <View
+      <View
+        style={{
+          alignSelf: 'center',
+        }}>
+        <Text
           style={{
-            flexDirection: 'row',
-            height: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: COLORS.black,
+            marginBottom: 10,
           }}>
-          {fakeDataTitle.map((item, index) => {
-            return (
-              <Pressable
+          Featured Brands
+        </Text>
+      </View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {fakeDataTitle1.map((item, index) => (
+          <Block
+            row
+            wrap
+            key={index}
+            style={{
+              width: '100%',
+              marginRight: 15,
+            }}>
+            {item?.data?.map((item, index) => (
+              <Block
                 key={item.id}
                 style={{
-                  margin: 15,
-                  paddingHorizontal: 15,
+                  marginLeft: 6,
+                  paddingHorizontal: 5,
                   paddingVertical: 10,
                   borderRadius: 10,
-                  backgroundColor: 'white',
                 }}>
-                <Text
-                  style={{
-                    color: COLORS.text2,
-                  }}>
-                  {item.title}
-                </Text>
-              </Pressable>
-            );
-          })}
-        </View>
+                <Image
+                  radius={5}
+                  resizeMode="stretch"
+                  width={width / 3.5}
+                  height={125}
+                  source={IMAGES.img_1}
+                />
+                <Image
+                  radius={5}
+                  resizeMode="stretch"
+                  width={width / 3.5}
+                  height={125}
+                  source={IMAGES.img_1}
+                />
+                <Image
+                  radius={5}
+                  resizeMode="stretch"
+                  width={width / 3.5}
+                  height={125}
+                  source={IMAGES.img_1}
+                />
+              </Block>
+            ))}
+          </Block>
+        ))}
       </ScrollView>
     </View>
   );

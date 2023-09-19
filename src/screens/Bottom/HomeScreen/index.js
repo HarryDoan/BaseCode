@@ -1,8 +1,9 @@
-import {SafeAreaView, Text, View} from 'react-native';
+import {Block, Carousel} from '@components';
+import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 
-import {Carousel} from '@components';
 import Header from './components/Header';
 import HorizontalScroll from './components/HorizontalScroll';
+import HorizontalScrollItem from './components/HorizontalScrollItem';
 import React from 'react';
 import TabViewExample from './components/TabViewExample';
 import {icons} from '@assets';
@@ -15,9 +16,15 @@ const HomeScreen = () => {
         backgroundColor: '#EAEFF2',
         paddingVertical: 10,
       }}>
-      <Header />
-      <TabViewExample />
-      <HorizontalScroll />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Header />
+        <TabViewExample />
+        <HorizontalScroll />
+        <HorizontalScrollItem />
+        <HorizontalScrollItem />
+
+        <Block height={100} />
+      </ScrollView>
     </SafeAreaView>
   );
 };

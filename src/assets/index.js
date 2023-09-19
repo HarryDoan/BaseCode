@@ -3,7 +3,11 @@ export const LOTTIES = {
 };
 
 export const IMAGES = {
-  img_1: require('@assets/images/img_1.jpeg'),
+  img_1: require('@assets/images/img_1.png'),
+  img_2: require('@assets/images/img_2.png'),
+  img_3: require('@assets/images/img_3.png'),
+  img_11: require('@assets/images/img_11.png'),
+  img_12: require('@assets/images/img_12.png'),
 };
 
 export const icons = {
