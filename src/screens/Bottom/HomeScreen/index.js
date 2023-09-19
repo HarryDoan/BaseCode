@@ -6,7 +6,7 @@ import HorizontalScroll from './components/HorizontalScroll';
 import HorizontalScrollImage from './components/HorizontalScrollImage';
 import React from 'react';
 import TabViewExample from './components/TabViewExample';
-import {icons} from '@assets';
+import {IMAGES, icons} from '@assets';
 import {useState} from 'react';
 import {height} from '@utils/responsive';
 
@@ -67,86 +67,169 @@ const fakeDataHorizontalItems = [
 const fakeDataImage1 = [
   {
     id: 1,
-    icon: icons.ic_1,
+
     title: 'Wines & Spirits',
     data: [
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_1,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_2,
       },
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_3,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_3,
+      },
+    ],
+  },
+  {
+    id: 2,
+
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_1,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_2,
+      },
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_3,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_3,
       },
     ],
   },
 ];
+
 const fakeDataImage2 = [
   {
     id: 1,
-    icon: icons.ic_1,
+
     title: 'Wines & Spirits',
     data: [
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_1,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_2,
       },
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_3,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_3,
+      },
+    ],
+  },
+  {
+    id: 2,
+
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_1,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_2,
+      },
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_3,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_3,
       },
     ],
   },
 ];
+
 const fakeDataImage3 = [
   {
     id: 1,
-    icon: icons.ic_1,
+
     title: 'Wines & Spirits',
     data: [
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_1,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_2,
       },
       {
         id: 1,
-        icon: icons.ic_1,
         title: 'Wines & Spirits',
+        img: IMAGES.img_3,
       },
       {
         id: 2,
-        icon: icons.ic_2,
         title: 'Beauty',
+        img: IMAGES.img_3,
+      },
+    ],
+  },
+  {
+    id: 2,
+
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_1,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_2,
+      },
+      {
+        id: 1,
+        title: 'Wines & Spirits',
+        img: IMAGES.img_3,
+      },
+      {
+        id: 2,
+        title: 'Beauty',
+        img: IMAGES.img_3,
       },
     ],
   },

@@ -1,13 +1,15 @@
 import {Block, Image, Pressable} from '@components';
 import {IMAGES, icons} from '@assets';
-import {ScrollView, Text, View} from 'react-native';
+import {Dimensions, ScrollView, Text, View} from 'react-native';
 import {fakeDataTitle} from '@utils/dataFake';
 
 import {COLORS} from '@theme';
 import React from 'react';
 import {width} from '@utils/responsive';
+import {useRef} from 'react';
 
 const HorizontalScrollImage = ({data}) => {
+  const scrollViewRef = useRef(null);
   return (
     <View>
       <View
@@ -18,25 +20,37 @@ const HorizontalScrollImage = ({data}) => {
           style={{
             fontSize: 18,
             fontWeight: 'bold',
-            color: COLORS.black,
+            color: 'black',
             marginBottom: 10,
           }}>
           Featured Brands
         </Text>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        ref={scrollViewRef}
+        scrollEventThrottle={16}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={event => {
+          const offsetX = event.nativeEvent.contentOffset.x;
+          const activeIndex = Math.floor(
+            offsetX / Dimensions.get('window').width,
+          );
+        }}>
         {data.map((item, index) => (
           <Block
             row
             wrap
             key={index}
             style={{
-              width: '100%',
+              width: width,
               marginRight: 15,
             }}>
-            {item?.data?.map((item, index) => (
+            {item?.data?.map((i, index) => (
               <Block
-                key={item.id}
+                wrap
+                key={i.id}
                 style={{
                   marginLeft: 6,
                   paddingHorizontal: 5,
@@ -46,23 +60,9 @@ const HorizontalScrollImage = ({data}) => {
                 <Image
                   radius={5}
                   resizeMode="stretch"
-                  width={width / 3.5}
+                  width={width / 3.75}
                   height={125}
-                  source={IMAGES.img_1}
-                />
-                <Image
-                  radius={5}
-                  resizeMode="stretch"
-                  width={width / 3.5}
-                  height={125}
-                  source={IMAGES.img_1}
-                />
-                <Image
-                  radius={5}
-                  resizeMode="stretch"
-                  width={width / 3.5}
-                  height={125}
-                  source={IMAGES.img_1}
+                  source={i.img}
                 />
               </Block>
             ))}
