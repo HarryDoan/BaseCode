@@ -4,7 +4,12 @@ import React from 'react';
 
 const EventScreen = () => {
   return (
-    <View>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <Text>EventScreen</Text>
     </View>
   );

@@ -64,7 +64,7 @@ export const COLORS = {
   tab1: ['#F81F83', '#D013A7'],
   tab2: ['#D013A7', '#BB0DB9', '#97089F'],
   tab3: ['#97089F', '#54006C'],
-  secondary: '#E5890A',
+  secondary: '#D31E4B',
   textPlaceholder: '#9f9f9f',
   iconPlaceholder: '#6e6e6e',
   textNew: '#5B3412',

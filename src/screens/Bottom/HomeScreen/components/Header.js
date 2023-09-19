@@ -1,71 +1,70 @@
-import React from 'react';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import {Block, Icon, Notify, Pressable, StatusBar, Text} from '@components';
-import {COLORS} from '@theme';
-import {HEADER} from '@constants';
-import {t} from 'i18next';
-import {authRoot, commonRoot} from '@navigation/navigationRef';
-import router from '@navigation/router';
-import {useDispatch, useSelector} from 'react-redux';
-import {useEffect} from 'react';
-import actions from '@redux/actions';
+import {Block, Image} from '@components';
+import React, {useState} from 'react';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 
-const Header = () => {
-  const getUser = useSelector(state => state.getUser?.data);
+import {icons} from '@assets';
+
+const SearchBar = () => {
+  const [searchText, setSearchText] = useState('');
+
+  const handleSearch = () => {
+    console.log(`Searching for: ${searchText}`);
+  };
 
   return (
-    <Block>
-      <StatusBar backgroundColor={COLORS.primary} />
-      <Block
-        row
-        alignCenter
-        spaceBetween
-        height={HEADER.height}
-        paddingHorizontal={15}
-        backgroundColor={COLORS.primary}>
-        <Text regular fontSize={14} color={COLORS.white}>
-          {getUser?.full_name || (
-            <Pressable
-              onPress={() => {
-                authRoot.navigate(router.LOGIN_SCREEN);
-              }}
-              height={30}
-              justifyCenter
-              alignCenter>
-              <Text medium fontSize={14} color={COLORS.white}>
-                {t('Login.login')}
-              </Text>
-            </Pressable>
-          )}
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+
+        borderRadius: 5,
+        width: '85%',
+        paddingHorizontal: 25,
+        marginVertical: 15,
+        height: 45,
+        // borderWidth: 1,
+      }}>
+      <TextInput
+        // placeholder="Search"
+        value={searchText}
+        onChangeText={text => setSearchText(text)}
+        style={{
+          paddingHorizontal: 10,
+          width: '100%',
+          height: 45,
+        }}
+      />
+      <View
+        style={{
+          position: 'absolute',
+          right: 10,
+          flexDirection: 'row',
+          width: '100%',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: 45,
+          borderRadius: 5,
+          paddingHorizontal: 10,
+          backgroundColor: 'white',
+        }}
+        onPress={handleSearch}>
+        <Image square={22} source={icons.ic_search} />
+
+        <Image square={22} source={icons.ic_camera} />
+      </View>
+      <Block absolute left={75}>
+        <Text
+          style={{
+            fontSize: 13,
+          }}>
+          Wines & Spirits Wines & Spirits dsa
         </Text>
-        <Block rowCenter spaceBetween>
-          <Pressable
-            rowCenter
-            radius={17}
-            height={33}
-            width={204}
-            spaceBetween
-            paddingHorizontal={10}
-            marginHorizontal={10}
-            backgroundColor={COLORS.white}
-            onPress={() => {
-              commonRoot.navigate(router.EVENT_LIST_SCREEN, {search: true});
-            }}>
-            <Text regular fontSize={14} color={COLORS.placeholder}>
-              {t('HomeScreen.search_event')}
-            </Text>
-            <Icon
-              IconType={Fontisto}
-              iconName={'search'}
-              iconSize={15}
-              iconColor={COLORS.placeholder}
-            />
-          </Pressable>
-          <Notify />
-        </Block>
       </Block>
-    </Block>
+      <Image absolute right={-50} top={2} square={50} source={icons.ic_heart} />
+    </View>
   );
 };
 
-export default Header;
+export default SearchBar;

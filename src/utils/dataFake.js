@@ -1,6 +1,9 @@
+import {Block, Carousel, Image} from '@components';
+import {IMAGES, icons} from '@assets';
 import {bottomRoot, commonRoot} from '@navigation/navigationRef';
 
-import {icons} from '@assets';
+import {COLORS} from '@theme';
+import {ImageBackground} from 'react-native';
 import router from '@navigation/router';
 import {t} from 'i18next';
 
@@ -68,13 +71,6 @@ export const dataOptionProfile = [
       commonRoot.navigate(router.INTRODUCE_YOUR_SCREEN);
     },
   },
-  // {
-  //   label: 'ProfileScreen.payment_methods',
-  //   icon: icons?.ic_payment,
-  //   naviga: () => {
-  //     commonRoot.navigate(router.PAYMENT_METHODS_SCREEN);
-  //   },
-  // },
   {
     label: 'ProfileScreen.language',
     icon: icons?.ic_language,
@@ -138,19 +134,176 @@ export const suggestToday = [
     image: icons?.ic_forU,
     title: t('homeScreen.forYou'),
   },
-  // {
-  //   group_id: 'nodata1',
-  //   image: icons?.ic_freeShip,
-  //   title: 'Miễn phí vận chuyển',
-  // },
-  // {
-  //   group_id: 'nodata2',
-  //   image: icons?.ic_newProduct,
-  //   title: 'Hàng mới về',
-  // },
-  // {
-  //   group_id: 'nodata3',
-  //   image: icons?.ic_voucherHot,
-  //   title: 'Khuyến mãi hot',
-  // },
+];
+
+const renderPicture = ({item, i}) => {
+  return (
+    <ImageBackground
+      key={i}
+      style={{
+        backgroundColor: COLORS.transparentColor,
+        borderRadius: 5,
+        height: 111,
+      }}
+      source={item.img_link ? {uri: item.img_link} : null}
+      resizeMode="cover"
+    />
+  );
+};
+const dataImage = {
+  img_link:
+    'https://www.google.com/search?sca_esv=566478814&rlz=1C5CHFA_enVN1074VN1075&sxsrf=AM9HkKnyvH2ebX-ohKGsYfhJO0TsKdfJhA:1695100394229&q=image&tbm=isch&source=lnms&sa=X&ved=2ahUKEwil0-yG9bWBAxWXklYBHTAeDkIQ0pQJegQIDBAB&biw=1369&bih=672&dpr=2#imgrc=YmDohMp4T5AODM',
+};
+
+export const fakeAPI1 = [
+  {
+    content: 'content 1',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+  {
+    content: 'content 2',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+  {
+    content: 'content 3',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+];
+export const fakeAPI2 = [
+  {
+    content: 'content 1',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+  {
+    content: 'content 2',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+];
+
+export const fakeAPI3 = [
+  {
+    content: 'content 1',
+    component: () => {
+      return (
+        <Block style={{width: 100, height: 100}}>
+          <Image
+            source={{
+              uri: 'https://www.seiu1000.org/sites/main/files/main-images/camera_lense_0.jpeg',
+            }}
+            style={{width: 100, height: 100}}
+          />
+        </Block>
+      );
+    },
+  },
+];
+
+export const fakeDataList = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'iShopCurates',
+  },
+  {
+    id: 2,
+    icon: icons.ic_2,
+    title: 'Gift Sets',
+  },
+  {
+    id: 3,
+    icon: icons.ic_3,
+    title: 'Earn rewards',
+  },
+  {
+    id: 4,
+    icon: icons.ic_4,
+    title: 'GoLocal',
+  },
+  {
+    id: 5,
+    icon: icons.ic_5,
+    title: 'Influencer',
+  },
+];
+export const fakeDataTitle = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'Wines & Spirits',
+  },
+  {
+    id: 2,
+    icon: icons.ic_2,
+    title: 'Beauty',
+  },
+  {
+    id: 3,
+    icon: icons.ic_3,
+    title: 'Electronics',
+  },
+  {
+    id: 4,
+    icon: icons.ic_4,
+    title: 'Fashion',
+  },
+  {
+    id: 5,
+    icon: icons.ic_5,
+    title: 'Food',
+  },
 ];

@@ -1128,6 +1128,11 @@
   resolved "https://registry.npmjs.org/@jsamr/react-native-li/-/react-native-li-2.3.1.tgz"
   integrity sha512-Qbo4NEj48SQ4k8FZJHFE2fgZDKTWaUGmVxcIQh3msg5JezLdTMMHuRRDYctfdHI6L0FZGObmEv3haWbIvmol8w==
 
+"@mgcrea/react-native-dnd@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@mgcrea/react-native-dnd/-/react-native-dnd-1.7.2.tgz#9b4fc48d9d3fd9aa15dfd094dd8ae3d82d0a30a0"
+  integrity sha512-eEs8bOmFFUVwxCXHDo0kwzholWfk4WlWlcjOe0/sy6ZDPZDMdQ+A8Kkd4ZSeT0tIL2imiGcWVVrZejui3TuYVQ==
+
 "@native-html/css-processor@1.11.0":
   version "1.11.0"
   resolved "https://registry.npmjs.org/@native-html/css-processor/-/css-processor-1.11.0.tgz"
@@ -6734,6 +6739,11 @@ react-native-device-info@^8.5.1:
   version "8.7.1"
   resolved "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-8.7.1.tgz"
   integrity sha512-cVMZztFa2Qn6qpQa601W61CtUwZQ1KXfqCOeltejAWEXmgIWivC692WGSdtGudj4upSi1UgMSaGcvKjfcpdGjg==
+
+react-native-dnd-like-ios@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-dnd-like-ios/-/react-native-dnd-like-ios-1.1.4.tgz#0e02fe1bb15457169b80eff4c93a11c325dfcf15"
+  integrity sha512-M+OVUJCZSuWoL3xSUanDEC74dKB0janyFJoVOFmss/FLeThYQp0fkFHLcuMkMWlSYQYkaUSTkwT9JQzGprMa1Q==
 
 react-native-fast-image@^8.5.11:
   version "8.6.3"

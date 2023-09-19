@@ -1,6 +1,8 @@
-import {AnimatedImage} from '@components';
-import React, {useEffect, useRef, useState} from 'react';
 import {Animated, Dimensions, FlatList, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+
+import {AnimatedImage} from '@components';
+import {icons} from '@assets';
 import styles from './styles';
 
 const {width} = Dimensions.get('window');
@@ -10,9 +12,9 @@ const FlatListAnimated = Animated.createAnimatedComponent(FlatList);
 const Carousel = ({
   data = null,
   sliderWidth = width,
-  itemWidth = sliderWidth,
+  itemWidth = sliderWidth || width,
   itemHeight = 200,
-  space = (width - sliderWidth) / 2,
+  space = (width - sliderWidth) / 2 || width / 2,
   dotWidth = 8,
   activeOpacity = 1,
   inActiveOpacity = 0.5,
@@ -109,8 +111,8 @@ const Carousel = ({
 
     return (
       <AnimatedImage
-        source={item.img_link}
-        thumbnail={item.thumbnail}
+        source={item?.img_link || icons.ic_carousel}
+        thumbnail={item?.thumbnail || icons.ic_carousel}
         containerStyles={{width: sliderWidth}}
         style={[
           styles.banner(opacity, scale, itemWidth, itemHeight),

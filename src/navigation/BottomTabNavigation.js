@@ -29,30 +29,34 @@ const CustomTabBar = ({state, navigation}) => {
           };
           const iconsSource = {
             [router.HOME_SCREEN]: icons?.ic_home,
-            [router.EVENT_SCREEN]: icons?.ic_event,
-            [router.UTILITY_SCREEN]: icons?.ic_utility,
-            [router.MEMBER_SCREEN]: icons?.ic_member,
+            [router.EVENT_SCREEN]: icons?.ic_vector,
+            [router.UTILITY_SCREEN]: icons?.ic_bag,
+            [router.MEMBER_SCREEN]: icons?.ic_profile,
           };
           const iconsSourceFocus = {
-            [router.HOME_SCREEN]: icons?.ic_home_focus,
+            [router.HOME_SCREEN]: icons?.ic_home,
             [router.EVENT_SCREEN]: icons?.ic_event_focus,
             [router.UTILITY_SCREEN]: icons?.ic_utility_focus,
             [router.MEMBER_SCREEN]: icons?.ic_member_focus,
           };
           const labels = {
-            [router.HOME_SCREEN]: t('BottomTab.home'),
-            [router.EVENT_SCREEN]: t('BottomTab.event'),
-            [router.UTILITY_SCREEN]: t('BottomTab.utility'),
-            [router.MEMBER_SCREEN]: t('BottomTab.member'),
+            [router.HOME_SCREEN]: 'Home',
+            [router.EVENT_SCREEN]: 'Category',
+            [router.UTILITY_SCREEN]: 'Bag',
+            [router.MEMBER_SCREEN]: 'Account',
           };
           return isFocused ? (
             <Block flex alignCenter backgroundColor={COLORS.white} key={index}>
               <Image
                 source={iconsSourceFocus[route.name]}
-                square={22}
+                square={25}
                 marginVertical={10}
               />
-              <Text marginTop={-5} color={COLORS.secondary} fontSize={12}>
+              <Text
+                semiBold
+                marginTop={-5}
+                color={COLORS.secondary}
+                fontSize={14}>
                 {labels[route.name]}
               </Text>
             </Block>
@@ -66,10 +70,10 @@ const CustomTabBar = ({state, navigation}) => {
               backgroundColor={COLORS.white}>
               <Image
                 source={iconsSource[route.name]}
-                square={22}
+                square={25}
                 marginVertical={10}
               />
-              <Text marginTop={-5} fontSize={12}>
+              <Text marginTop={-5} fontSize={14}>
                 {labels[route.name]}
               </Text>
             </Pressable>

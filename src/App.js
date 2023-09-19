@@ -1,20 +1,22 @@
 import 'moment/locale/vi';
-import store, {persistor} from '@redux/store';
-import React, {PureComponent, useEffect} from 'react';
+
 import {Provider, useDispatch, useSelector} from 'react-redux';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import React, {PureComponent, useEffect} from 'react';
+import {Text, TextInput} from 'react-native';
+import store, {persistor} from '@redux/store';
 import {useNotificationMessage, useNotificationPermission} from '@hooks';
-import {PersistGate} from 'redux-persist/lib/integration/react';
+
 import {CodePushProgressDialog} from '@components';
-import {PortalProvider} from '@gorhom/portal';
-import {TextInput, Text} from 'react-native';
-import RootStack from './navigation/RootStack';
-import codePush from 'react-native-code-push';
-import Toast from 'react-native-toast-message';
 import NetWork from '@components/NetWork';
-import i18n from './i18n';
-import actions from '@redux/actions';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+import {PortalProvider} from '@gorhom/portal';
+import RootStack from './navigation/RootStack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
+import Toast from 'react-native-toast-message';
+import actions from '@redux/actions';
+import codePush from 'react-native-code-push';
+import i18n from './i18n';
 
 if (Text.defaultProps == null) {
   Text.defaultProps = {};
