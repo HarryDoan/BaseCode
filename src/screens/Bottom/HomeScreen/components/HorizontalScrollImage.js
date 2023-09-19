@@ -1,13 +1,13 @@
 import {Block, Image, Pressable} from '@components';
 import {IMAGES, icons} from '@assets';
 import {ScrollView, Text, View} from 'react-native';
-import {fakeDataTitle, fakeDataTitle1} from '@utils/dataFake';
+import {fakeDataTitle} from '@utils/dataFake';
 
 import {COLORS} from '@theme';
 import React from 'react';
 import {width} from '@utils/responsive';
 
-const HorizontalScrollItem = () => {
+const HorizontalScrollImage = ({data}) => {
   return (
     <View>
       <View
@@ -25,7 +25,7 @@ const HorizontalScrollItem = () => {
         </Text>
       </View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {fakeDataTitle1.map((item, index) => (
+        {data.map((item, index) => (
           <Block
             row
             wrap
@@ -73,4 +73,4 @@ const HorizontalScrollItem = () => {
   );
 };
 
-export default HorizontalScrollItem;
+export default HorizontalScrollImage;

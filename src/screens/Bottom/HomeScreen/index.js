@@ -3,12 +3,165 @@ import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 
 import Header from './components/Header';
 import HorizontalScroll from './components/HorizontalScroll';
-import HorizontalScrollItem from './components/HorizontalScrollItem';
+import HorizontalScrollImage from './components/HorizontalScrollImage';
 import React from 'react';
 import TabViewExample from './components/TabViewExample';
 import {icons} from '@assets';
+import {useState} from 'react';
+import {height} from '@utils/responsive';
+
+const fakeDataTitle = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'Wines & Spirits',
+  },
+  {
+    id: 2,
+    icon: icons.ic_2,
+    title: 'Beauty',
+  },
+  {
+    id: 3,
+    icon: icons.ic_3,
+    title: 'Electronics',
+  },
+  {
+    id: 4,
+    icon: icons.ic_4,
+    title: 'Fashion',
+  },
+  {
+    id: 5,
+    icon: icons.ic_5,
+    title: 'Food',
+  },
+];
+const fakeDataHorizontalItems = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'iShopCurates',
+  },
+  {
+    id: 2,
+    icon: icons.ic_2,
+    title: 'Gift Sets',
+  },
+  {
+    id: 3,
+    icon: icons.ic_3,
+    title: 'Earn rewards',
+  },
+  {
+    id: 4,
+    icon: icons.ic_4,
+    title: 'GoLocal',
+  },
+  {
+    id: 5,
+    icon: icons.ic_5,
+    title: 'Influencer',
+  },
+];
+const fakeDataImage1 = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+    ],
+  },
+];
+const fakeDataImage2 = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+    ],
+  },
+];
+const fakeDataImage3 = [
+  {
+    id: 1,
+    icon: icons.ic_1,
+    title: 'Wines & Spirits',
+    data: [
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+      {
+        id: 1,
+        icon: icons.ic_1,
+        title: 'Wines & Spirits',
+      },
+      {
+        id: 2,
+        icon: icons.ic_2,
+        title: 'Beauty',
+      },
+    ],
+  },
+];
 
 const HomeScreen = () => {
+  const [listOrder, setListOrder] = useState([
+    'Header',
+    'TabViewExample',
+    'HorizontalScrollImage1',
+    'HorizontalScrollImage2',
+    'HorizontalScrollImage3',
+    'HorizontalScrollImage4',
+  ]);
+
   return (
     <SafeAreaView
       style={{
@@ -17,13 +170,31 @@ const HomeScreen = () => {
         paddingVertical: 10,
       }}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Header />
-        <TabViewExample />
-        <HorizontalScroll />
-        <HorizontalScrollItem />
-        <HorizontalScrollItem />
+        {listOrder?.map((item, index) => {
+          return (
+            <View>
+              {item == 'Header' && <Header />}
 
-        <Block height={100} />
+              {item == 'TabViewExample' && (
+                <TabViewExample data={fakeDataTitle} />
+              )}
+              {item == 'HorizontalScrollImage1' && (
+                <HorizontalScroll data={fakeDataHorizontalItems} />
+              )}
+              {item == 'HorizontalScrollImage2' && (
+                <HorizontalScrollImage data={fakeDataImage1} />
+              )}
+              {item == 'HorizontalScrollImage3' && (
+                <HorizontalScrollImage data={fakeDataImage2} />
+              )}
+              {item == 'HorizontalScrollImage4' && (
+                <HorizontalScrollImage data={fakeDataImage3} />
+              )}
+            </View>
+          );
+        })}
+
+        <Block height={height * 0.2} />
       </ScrollView>
     </SafeAreaView>
   );

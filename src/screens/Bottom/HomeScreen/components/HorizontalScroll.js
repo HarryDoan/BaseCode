@@ -1,11 +1,11 @@
 import {Image, Pressable} from '@components';
 import {ScrollView, Text, View} from 'react-native';
-import {fakeDataList, fakeDataTitle} from '@utils/dataFake';
+import {fakeDataTitle} from '@utils/dataFake';
 
 import {COLORS} from '@theme';
 import React from 'react';
 
-const HorizontalScroll = () => {
+const HorizontalScroll = ({data}) => {
   return (
     <View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} l>
@@ -17,7 +17,7 @@ const HorizontalScroll = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          {fakeDataList.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <Pressable
                 key={item.id}

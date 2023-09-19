@@ -334,16 +334,6 @@ export const fakeDataTitle1 = [
         icon: icons.ic_2,
         title: 'Beauty',
       },
-      {
-        id: 1,
-        icon: icons.ic_1,
-        title: 'Wines & Spirits',
-      },
-      {
-        id: 2,
-        icon: icons.ic_2,
-        title: 'Beauty',
-      },
     ],
   },
 ];

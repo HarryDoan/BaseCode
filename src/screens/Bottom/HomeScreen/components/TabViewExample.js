@@ -35,14 +35,15 @@ const TabScreen = ({tabLabel}) => {
   );
 };
 
-const TabViewExample = () => {
+const TabViewExample = ({data}) => {
   const [activeTab, setActiveTab] = useState(0);
   const scrollViewRef = useRef(null);
 
-  const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
+  // const tabs = ['Tab 1', 'Tab 2', 'Tab 3'];
 
   const scrollToTab = index => {
     if (scrollViewRef.current) {
+      setActiveTab(index);
       scrollViewRef.current.scrollTo({
         x: index * Dimensions.get('window').width,
         animated: true,
@@ -52,22 +53,6 @@ const TabViewExample = () => {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.tabBar}>
-        {tabs.map((tab, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => scrollToTab(index)}
-            style={[styles.tab, activeTab === index && styles.activeTab]}>
-            <Text
-              style={
-                activeTab === index ? styles.activeTabText : styles.tabText
-              }>
-              {tab}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View> */}
-
       <View>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} l>
           <View
@@ -77,12 +62,11 @@ const TabViewExample = () => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            {fakeDataTitle.map((item, index) => {
+            {data.map((item, index) => {
               return (
                 <Pressable
                   onPress={() => {
-                    // scrollToTab(index);
-                    // setActiveTab(index);
+                    scrollToTab(index);
                   }}
                   key={item.id}
                   style={{
@@ -119,7 +103,7 @@ const TabViewExample = () => {
           );
           setActiveTab(activeIndex);
         }}>
-        {fakeDataTitle.map((tab, index) => (
+        {data.map((tab, index) => (
           <Image width={width} height={300} source={icons.ic_carousel} />
         ))}
       </ScrollView>
@@ -128,9 +112,7 @@ const TabViewExample = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-  },
+  container: {},
   tabContent: {
     width: Dimensions.get('window').width,
   },
